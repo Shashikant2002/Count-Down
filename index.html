@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountDown</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <h2 id="count_down"></h2>
+
+    <script>
+
+        let x = setInterval(function () {
+            const endDate = new Date("nov 24, 2022 10:00:00").getTime();
+            const now = new Date().getTime();
+            const diff = endDate - now;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / (1000));
+            const count_down = document.getElementById('count_down');
+            count_down.innerHTML = `${days} ${hours} ${minutes} ${seconds}`;
+
+        }, 1000);
+
+    </script>
+</body>
+
+</html>
